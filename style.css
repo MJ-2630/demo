@@ -74,61 +74,6 @@
     }
 
     /* =========================
-       HERO SECTION
-    ========================= */
-
-    .hero {
-        width: 100%;
-        min-height: 90vh;
-
-        background-image:
-            linear-gradient(
-                rgba(0, 0, 0, 0.45),
-                rgba(0, 0, 0, 0.45)
-            ),
-            url("image1.jpg");
-
-        background-size: cover;
-        background-position: center;
-
-        display: flex;
-        align-items: center;
-        padding: 0 8%;
-        color: white;
-    }
-
-    .hero-content {
-        max-width: 650px;
-    }
-
-    .hero-content h1 {
-        font-size: 55px;
-        line-height: 1.2;
-        margin-bottom: 20px;
-    }
-
-    .hero-content p {
-        font-size: 23px;
-        margin-bottom: 30px;
-    }
-
-    .hero-btn {
-        display: inline-block;
-        background-color: rgb(3, 120, 223);
-        color: white;
-        padding: 14px 30px;
-        text-decoration: none;
-        border-radius: 5px;
-        font-size: 17px;
-        font-weight: bold;
-        transition: 0.3s;
-    }
-
-    .hero-btn:hover {
-        background-color: red;
-    }
-
-    /* =========================
        ABOUT US
     ========================= */
 
@@ -3105,4 +3050,97 @@
     .nav-link {
         font-size: 14px;
     }
+}
+.hero {
+    position: relative;
+    min-height: 90vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+    color: white;
+}
+
+.hero-slides {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: heroSlider 30s infinite;
+}
+
+.slide-1 {
+    background-image: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+                      url("hero-1.jpeg");
+    animation-delay: 0s;
+}
+
+.slide-2 {
+    background-image: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+                      url("hero-2.jpeg");
+    animation-delay: 6s;
+}
+
+.slide-3 {
+    background-image: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+                      url("hero-3.jpeg");
+    animation-delay: 12s;
+}
+
+.slide-4 {
+    background-image: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+                      url("hero-4.jpeg");
+    animation-delay: 18s;
+}
+
+.slide-5 {
+    background-image: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+                      url("hero-5.jpeg");
+    animation-delay: 24s;
+}
+
+ .hero-content {
+        max-width: 650px;
+    }
+
+    .hero-content h1 {
+        font-size: 55px;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+
+    .hero-content p {
+        font-size: 23px;
+        margin-bottom: 30px;
+    }
+
+    .hero-btn {
+        display: inline-block;
+        background-color: rgb(3, 120, 223);
+        color: white;
+        padding: 14px 30px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 17px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .hero-btn:hover {
+        background-color: red;
+    }
+
+@keyframes heroSlider {
+    0% { opacity: 0; transform: scale(1); }
+    5% { opacity: 1; }
+    20% { opacity: 1; transform: scale(1.08); }
+    25% { opacity: 0; }
+    100% { opacity: 0; }
 }
