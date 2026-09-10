@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap');
+
+:root{
+  --dark:#101b24;
+  --gold:#e5a321;
+  --gold-deep:#be7910;
+  --light:#f6f7f5;
+  --ink:#13202b;
+}
+
+html{scroll-behavior:smooth;}
+body{
+  font-family:"DM Sans",Arial,sans-serif;
+  background:var(--light);
+  overflow-x:hidden;
+}
+h1,h2,h3,.nav-link,.hero-btn,.about-btn,.contact-btn{
+  font-family:"Outfit",Arial,sans-serif;
+}
+
+/* Header and navbar */
+.header{background:var(--dark);color:#fff;padding:9px 5%;}
+.header a{color:#fff;transition:.3s;}
+.header a:hover{color:var(--gold);}
+
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  min-height:86px;
+  padding:8px 6%;
+  box-shadow:0 4px 18px rgba(0,0,0,.08);
+}
+.logo img{
+  height:72px;
+  max-width:210px;
+  object-fit:contain;
+  transition:.3s;
+}
+.logo img:hover{transform:rotate(-2deg) scale(1.04);}
+
+.nav-link{
+  color:var(--ink);
+  position:relative;
+  font-size:15px;
+}
+.nav-link::after{
+  content:"";
+  width:0;
+  height:2px;
+  position:absolute;
+  left:0;
+  bottom:-5px;
+  background:var(--gold);
+  transition:.3s;
+}
+.nav-link:hover,
+.nav-link.active{color:var(--ink);}
+.nav-link:hover::after,
+.nav-link.active::after{width:100%;}
+
+/* Hero */
+.hero{
+  position:relative;
+  isolation:isolate;
+  min-height:min(780px,88vh);
+  overflow:hidden;
+  background-position:center;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:linear-gradient(115deg,rgba(7,18,25,.82),rgba(10,27,35,.45));
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  width:460px;
+  height:460px;
+  right:-120px;
+  bottom:-180px;
+  z-index:-1;
+  border:70px solid rgba(229,163,33,.45);
+  border-radius:50%;
+  animation:orbit 11s ease-in-out infinite;
+}
+.hero-content{animation:heroEnter .9s ease both;}
+.hero-content h1{
+  font-size:clamp(44px,5vw,74px);
+  letter-spacing:-2px;
+}
+.hero-btn,.about-btn,.contact-btn,
+.why-cta-btn,.cta-btn,.review-btn,.call-btn{
+  background:var(--gold);
+  color:var(--ink);
+  border-radius:0;
+  box-shadow:0 10px 25px rgba(229,163,33,.25);
+  transition:.3s;
+}
+.hero-btn:hover,.about-btn:hover,.contact-btn:hover,
+.why-cta-btn:hover,.cta-btn:hover,.review-btn:hover,.call-btn:hover{
+  background:#ffc452;
+  color:var(--ink);
+  transform:translateY(-3px);
+}
+
+/* Cards */
+.service-card,.testimonial-card,.mv-card,.value-card,
+.strength-card,.process-card{
+  border:1px solid rgba(19,32,43,.08);
+  transition:.3s;
+}
+.service-card:hover,.testimonial-card:hover,.mv-card:hover,
+.value-card:hover,.strength-card:hover,.process-card:hover{
+  transform:translateY(-10px);
+  border-color:var(--gold);
+  box-shadow:0 18px 40px rgba(16,27,36,.12);
+}
+.service-icon{color:var(--gold-deep);transition:.3s;}
+.service-card:hover .service-icon{transform:scale(1.15) rotate(-6deg);}
+
+.about-image,.why-image,.who-image,.approach-image,
+.why-main-image,.benefits-image{
+  overflow:hidden;
+  border-radius:12px;
+}
+.about-image img,.why-image img,.who-image img,.approach-image img,
+.why-main-image img,.benefits-image img{
+  transition:.7s;
+}
+.about-image:hover img,.why-image:hover img,.who-image:hover img,
+.approach-image:hover img,.why-main-image:hover img,
+.benefits-image:hover img{transform:scale(1.06);}
+
+.why-icon,.contact-icon,.benefit-icon,.mv-icon,.process-icon{
+  background:var(--gold);
+  color:var(--ink);
+  transition:.3s;
+}
+.why-item:hover .why-icon,.contact-item:hover .contact-icon,
+.benefit-item:hover .benefit-icon{
+  transform:rotate(12deg) scale(1.08);
+}
+
+.services,.who-we-are,.our-approach,.why-main,
+.services-intro,.services-list,.testimonials-intro,
+.contact-intro,.contact-main,.contact-map{background:#fff;}
+
+.mission-vision,.our-strengths,.service-benefits,
+.testimonials,.testimonials-list{background:#eef1ef;}
+
+.section-title,.services-heading span,.why-content>span,
+.who-content>span,.values-heading>span,.approach-content>span,
+.why-intro span,.why-main-content>span,.strength-heading>span,
+.process-heading>span,.services-intro span,.benefits-content>span,
+.testimonials-intro span,.contact-intro span,.contact-info>span,
+.map-heading>span{color:var(--gold-deep);}
+
+.stars,.quote-icon{color:var(--gold)!important;}
+.client-icon,.strength-icon,.value-icon{
+  background:var(--dark);
+  color:var(--gold);
+}
+
+.contact{background:radial-gradient(circle at 85% 10%,#273d4b,var(--dark) 48%);}
+.contact-form{
+  box-shadow:0 18px 40px rgba(16,27,36,.12);
+}
+.contact-form input:focus,
+.contact-form textarea:focus{
+  border-color:var(--gold);
+  box-shadow:0 0 0 4px rgba(229,163,33,.15);
+}
+
+.footer{background:#0b141b;}
+.footer-box h3,.footer-box ul li a:hover{color:var(--gold);}
+
+/* WhatsApp */
+.whatsapp-btn{
+  background:#25d366;
+  animation:whatsappPulse 2s infinite;
+}
+.whatsapp-btn:hover{transform:scale(1.12) rotate(-7deg);}
+
+/* Animations */
+@keyframes heroEnter{
+  from{opacity:0;transform:translateY(26px);}
+  to{opacity:1;transform:translateY(0);}
+}
+@keyframes orbit{
+  50%{transform:translate(-35px,-30px) scale(1.08);}
+}
+@keyframes whatsappPulse{
+  0%,100%{box-shadow:0 5px 15px rgba(0,0,0,.25),0 0 0 0 rgba(37,211,102,.5);}
+  60%{box-shadow:0 5px 15px rgba(0,0,0,.25),0 0 0 14px rgba(37,211,102,0);}
+}
+
+/* Mobile */
+@media(max-width:760px){
+  .navbar{
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+    padding:10px 5%;
+  }
+  .logo img{height:54px;}
+  .nav-menu{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px 18px;
+  }
+  .nav-link{font-size:14px;}
+  .hero{min-height:650px;}
+  .hero::after{
+    width:270px;
+    height:270px;
+    border-width:40px;
+  }
+}
