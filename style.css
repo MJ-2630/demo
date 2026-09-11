@@ -641,7 +641,7 @@
 }
 
 .contact-heading span {
-    color: #d89b00;
+    color: #ffb702;
     font-size: 14px;
     font-weight: bold;
     letter-spacing: 2px;
@@ -700,6 +700,7 @@
 }
 
 .contact-item h3 {
+    color: #ffc401;
     font-size: 17px;
     margin-bottom: 5px;
 }
@@ -818,7 +819,7 @@
 /* Footer Box */
 
 .footer-box h3 {
-    color: #d89b00;
+    color: #f79706;
     font-size: 19px;
     margin-bottom: 20px;
 }
